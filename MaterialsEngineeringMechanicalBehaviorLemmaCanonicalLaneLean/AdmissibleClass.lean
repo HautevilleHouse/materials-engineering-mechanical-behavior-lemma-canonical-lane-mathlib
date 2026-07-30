@@ -1,0 +1,16 @@
+import MaterialsEngineeringMechanicalBehaviorLemmaCanonicalLaneLean.MathlibObjects
+
+namespace HautevilleHouse
+namespace MaterialsEngineeringMechanicalBehaviorLemmaCanonicalLaneLean
+
+structure AdmissibleClass where
+  object : MaterialsAdmittedObject
+  endpointSatisfied : Prop
+  remainderRecorded : Prop
+  gateWitness : endpointSatisfied ∨ remainderRecorded
+
+def admittedClosure (A : AdmissibleClass) : Prop :=
+  MaterialsWitnessClosed A.object ∧ (A.endpointSatisfied ∨ A.remainderRecorded)
+
+end MaterialsEngineeringMechanicalBehaviorLemmaCanonicalLaneLean
+end HautevilleHouse
